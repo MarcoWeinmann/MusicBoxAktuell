@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/firstText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="50dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/secondText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="50dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/firstText" />
+
+    <EditText
+        android:id="@+id/thirdText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="50dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondText" />
+
+    <RadioGroup
+        android:id="@+id/music_type_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdText"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <RadioButton
+            android:id="@+id/radio_pop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pop"
+            android:layout_margin="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_volk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volk"
+            android:layout_margin="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radio_rap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rap"
+            android:layout_margin="5dp"/>
+
+        <ImageButton
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/design_default_color_on_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/music_type_radio"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:layout_margin="5dp"
+            android:padding="5dp"/>
+
+    </RadioGroup>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/song_text_slider"
+        android:layout_width="315dp"
+        android:layout_height="54dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:valueFrom="1.0"
+        android:valueTo="5.0"
+        android:stepSize="1.0"
+        app:layout_constraintTop_toBottomOf="@id/music_type_radio" />
+
+    <TextView
+        android:id="@+id/song_text_tv"
+        android:layout_width="315dp"
+        android:layout_height="290dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_text_slider"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
