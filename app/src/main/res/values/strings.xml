@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Musik Box</string>
-    <string name="pop_song">\nPop Song mit %1$s und auch %2$s\nWenn es auch noch gut läuft kommt auch etwas %3$s\n\n </string>
-    <string name="pop_ref">Pop Refrain in die läääääääääänge gezogen\nIrgendwas am jaulen\n</string>
-    <string name="rap_song">\n Yeah! Yeah! Ah! Yeah ! %1$s! \n Markenname  %2$s Markenname  \n &#129324; aaaaaah! &#129324; uuuhhh! &#129324; %3$s\n\n</string>
-    <string name="rap_song_ref">Wir schreiben ne App \nDie macht n Rap \n </string>
-    <string name="volk_song">\nAm Brunnen vor dem %1$s,\n da steht ein Lindenbaum.\nIch träumt in seinem %2$s\n so manchen sǘßen Traum.\n\n</string>
-    <string name="volk_song_ref">&#129419; La La La La La %1$s La La La La &#128330;\n </string>
+    <string name="pop_verse">\nPop Song mit %1$s und auch %2$s\nWenn es auch noch gut läuft kommt auch etwas %3$s\n\n </string>
+    <string name="pop_chorus">Pop Refrain in die läääääääääänge gezogen\nIrgendwas am jaulen\n</string>
+    <string name="rap_verse">\n Yeah! Yeah! Ah! Yeah ! %1$s! \n Markenname  %2$s Markenname  \n &#129324; aaaaaah! &#129324; uuuhhh! &#129324; %3$s\n\n</string>
+    <string name="rap_chorus">Wir schreiben ne App \nDie macht n Rap \n </string>
+    <string name="volk_verse">\nAm Brunnen vor dem %1$s,\n da steht ein Lindenbaum.\nIch träumt in seinem %2$s\n so manchen sǘßen Traum.\n\n</string>
+    <string name="volk_chorus">&#129419; La La La La La %1$s La La La La &#128330;\n </string>
     <string name="genre_error">Wähle bitte eine Genre aus.</string>
 </resources>

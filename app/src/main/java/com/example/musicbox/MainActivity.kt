@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    /**
+     * diese Funktion gibt den Wert des ausgewählten RadioButtons zurück
+     **/
     fun getGenreFromRadios(): String {
-        // diese Funktion soll den Wert des ausgewählten RadioButtons zurückgeben
         try {
             var genre = findViewById<RadioButton>(findViewById<RadioGroup>(R.id.music_type_radio).checkedRadioButtonId).text.toString()
             return genre
@@ -31,26 +33,34 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * diese Funktion gibt den Wert des Sliders zurück
+     **/
     fun getSongLength(): Float {
-        // diese Funktion soll den Wert des Sliders zurückgeben
         var songLength = findViewById<Slider>(R.id.song_text_slider).value
         return songLength
     }
 
+    /**
+     * Diese Funktion liest die EditText Felder aus und gibt den Wert zurück
+     **/
     fun getStringFromInput(tvId: Int): String {
-        // Diese Funktion soll die EditText Felder auslesen und den Wert zurückgeben
         var str = findViewById<EditText>(tvId).text.toString()
         return str
     }
 
-    fun createSongString(genreVerse: String, genreRefrain: String, songLength: Int): String {
-        // Diese Funktion soll Verse und Refrain zu einem String zusammenführen und je nach songLength Wiederholen
-        return ((genreVerse) + genreRefrain.repeat(3)).repeat(songLength)
+    /**
+     * Diese Funktion  führt Verse und Refrain zusammen und wiederholt je nach songLength
+     **/
+    fun createSongString(genreVerse: String, genreChorus: String, songLength: Int): String {
+        return ((genreVerse) + genreChorus.repeat(3)).repeat(songLength)
     }
 
+    /**
+     * diese Funktion führ die vorher implementierten Funktionen aus, um die Infos asuzulesen und zusammenzuführen
+     * Außerdem wird der erstellte songString in der entsprechenden View dargestellt
+     **/
     fun createSongText() {
-        // Die Funktion soll die vorher implementierten Funktionen aufrufen, um die Infos asuzulesen und zusammen zuführen
-        // Außerdem soll der erstellte Song in dem TextView unterhalb des Formulars erscheinen
         var t1 = getStringFromInput(R.id.firstText) // Eingabe aus Feld 1
         var t2 = getStringFromInput(R.id.secondText) // Eingabe aus Feld 2
         var t3 = getStringFromInput(R.id.thirdText) // Eingabe aus Feld 3
@@ -60,29 +70,26 @@ class MainActivity : AppCompatActivity() {
         var sV = findViewById<TextView>(R.id.song_text_tv) // TextView in dem der Song angezeigt wird
         sV.setMovementMethod(ScrollingMovementMethod()) // Macht TextView scrollbar
         var songVerse: String = "" // Strophen des jeweiligen Songs in dieser Variable speichern
-        var songRefrain: String = "" // Refrain des jewiligen Songs in dieser Variable speichern
+        var songChorus: String = "" // Refrain des jewiligen Songs in dieser Variable speichern
 
         when (genre) {
             "Rap" -> {
-                // Formatiere die Rap Strings hier
-                songVerse = getString(R.string.rap_song, t1, t2, t3)
-                songRefrain = getString(R.string.rap_song_ref)
+                songVerse = getString(R.string.rap_verse, t1, t2, t3)
+                songChorus = getString(R.string.rap_chorus)
             }
             "Pop" -> {
-                // Formatiere die Pop Strings hier
-                songVerse = getString(R.string.pop_song, t1, t2, t3)
-                songRefrain = getString(R.string.pop_ref)
+                songVerse = getString(R.string.pop_verse, t1, t2, t3)
+                songChorus = getString(R.string.pop_chorus)
             }
-            "Volk" -> {
-                // Formatiere die Volk Strings hier
-                songVerse = getString(R.string.volk_song, t1, t2)
-                songRefrain = getString(R.string.volk_song_ref, t3)
+            "Folk", "Volk" -> {
+                songVerse = getString(R.string.volk_verse, t1, t2)
+                songChorus = getString(R.string.volk_chorus, t3)
             }
             else -> {
                 songVerse = getString(R.string.genre_error)
             }
         }
-        songString = createSongString(songVerse, songRefrain, songLength.toInt())
+        songString = createSongString(songVerse, songChorus, songLength.toInt())
         sV.text = songString
     }
 }

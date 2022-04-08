@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Music Box</string>
-    <string name="pop_song">\nPop Song with %1$s and also %2$s\nIf all is fine %3$s comes to baaaabeeee!!\n\n </string>
-    <string name="pop_ref">Pop chorus something howling\n</string>
-    <string name="rap_song">\n Yeah! Yeah! Ah! Yeah ! %1$s!\nBrandname  %2$s Brandname  \n&#129324; aaaaaah! &#129324; uuuhhh! &#129324; %3$s\n\n</string>
-    <string name="rap_song_ref">We wrote an App\nReturns a Rap\n </string>
-    <string name="volk_song">\nUp to mighty %1$s\nCame an %2$s one day.\nAs the streets are paved with gold\nSure, everyone was gay ...\n\n</string>
-    <string name="volk_song_ref">&#128148; It s a long way to %1$s\nTo the sweetest girl I know!&#128131;\n</string>
+    <string name="pop_verse">\nPop Song with %1$s and also %2$s\nIf all is fine %3$s comes to baaaabeeee!!\n\n </string>
+    <string name="pop_chorus">Pop chorus something howling\n</string>
+    <string name="rap_verse">\n Yeah! Yeah! Ah! Yeah ! %1$s!\nBrandname  %2$s Brandname  \n&#129324; aaaaaah! &#129324; uuuhhh! &#129324; %3$s\n\n</string>
+    <string name="rap_chorus">We wrote an App\nReturns a Rap\n </string>
+    <string name="volk_verse">\nUp to mighty %1$s\nCame an %2$s one day.\nAs the streets are paved with gold\nSure, everyone was gay ...\n\n</string>
+    <string name="volk_chorus">&#128148; It s a long way to %1$s\nTo the sweetest girl I know!&#128131;\n</string>
     <string name="genre_error">Choose a genre please</string>
 </resources>
