@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.slider.Slider
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +23,9 @@ class MainActivity : AppCompatActivity() {
     /**
      * diese Funktion gibt den Wert des ausgewählten RadioButtons zurück
      **/
-    fun getGenreFromRadios(): String {
-        try {
-            var genre = findViewById<RadioButton>(findViewById<RadioGroup>(R.id.music_type_radio).checkedRadioButtonId).text.toString()
-            return genre
-        } catch (ex: Exception) {
-            return ex.toString()
-        }
+    fun getGenreFromRadios(): Int {
+        var genre = findViewById<RadioGroup>(R.id.music_type_radio).checkedRadioButtonId
+        return genre
     }
 
     /**
@@ -61,27 +56,27 @@ class MainActivity : AppCompatActivity() {
      * Außerdem wird der erstellte songString in der entsprechenden View dargestellt
      **/
     fun createSongText() {
-        var t1 = getStringFromInput(R.id.firstText) // Eingabe aus Feld 1
-        var t2 = getStringFromInput(R.id.secondText) // Eingabe aus Feld 2
-        var t3 = getStringFromInput(R.id.thirdText) // Eingabe aus Feld 3
-        var genre = getGenreFromRadios() // Auswahl des Genre
-        var songLength = getSongLength() // AUswahl Song Länge
-        var songString: String = "" // Variable wird für die zusammengesetzte Lyrik verwendet
-        var sV = findViewById<TextView>(R.id.song_text_tv) // TextView in dem der Song angezeigt wird
-        sV.setMovementMethod(ScrollingMovementMethod()) // Macht TextView scrollbar
-        var songVerse: String = "" // Strophen des jeweiligen Songs in dieser Variable speichern
-        var songChorus: String = "" // Refrain des jewiligen Songs in dieser Variable speichern
+        var t1 = getStringFromInput(R.id.firstText)
+        var t2 = getStringFromInput(R.id.secondText)
+        var t3 = getStringFromInput(R.id.thirdText)
+        var genre = getGenreFromRadios()
+        var songLength = getSongLength()
+        var songString: String = ""
+        var sV = findViewById<TextView>(R.id.song_text_tv)
+        sV.setMovementMethod(ScrollingMovementMethod())
+        var songVerse: String = ""
+        var songChorus: String = ""
 
         when (genre) {
-            "Rap" -> {
+            R.id.radio_rap -> {
                 songVerse = getString(R.string.rap_verse, t1, t2, t3)
                 songChorus = getString(R.string.rap_chorus)
             }
-            "Pop" -> {
+            R.id.radio_pop -> {
                 songVerse = getString(R.string.pop_verse, t1, t2, t3)
                 songChorus = getString(R.string.pop_chorus)
             }
-            "Folk", "Volk" -> {
+            R.id.radio_volk -> {
                 songVerse = getString(R.string.volk_verse, t1, t2)
                 songChorus = getString(R.string.volk_chorus, t3)
             }
