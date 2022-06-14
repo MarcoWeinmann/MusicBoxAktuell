@@ -8,37 +8,49 @@
 
     <EditText
         android:id="@+id/firstText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/secondText"
+        app:layout_constraintVertical_weight="1"/>
 
     <EditText
         android:id="@+id/secondText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="50dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@id/firstText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstText"
+        app:layout_constraintBottom_toTopOf="@id/thirdText"
+        app:layout_constraintVertical_weight="1"/>
 
     <EditText
         android:id="@+id/thirdText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="50dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/secondText" />
+        app:layout_constraintTop_toBottomOf="@id/secondText"
+        app:layout_constraintBottom_toTopOf="@id/music_type_radio"
+        app:layout_constraintVertical_weight="1"/>
 
     <RadioGroup
         android:id="@+id/music_type_radio"
@@ -47,8 +59,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdText"
+        app:layout_constraintBottom_toTopOf="@id/song_text_slider"
         android:orientation="horizontal"
-        android:layout_margin="5dp">
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="30dp"
+        app:layout_constraintVertical_weight="1"
+        >
 
         <RadioButton
             android:id="@+id/radio_pop"
@@ -88,27 +104,31 @@
 
     <com.google.android.material.slider.Slider
         android:id="@+id/song_text_slider"
-        android:layout_width="315dp"
-        android:layout_height="54dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:valueFrom="1.0"
         android:valueTo="5.0"
         android:stepSize="1.0"
-        app:layout_constraintTop_toBottomOf="@id/music_type_radio" />
+        app:layout_constraintTop_toBottomOf="@id/music_type_radio"
+        app:layout_constraintBottom_toTopOf="@id/song_text_tv"
+        app:layout_constraintVertical_weight="1"/>
 
     <TextView
         android:id="@+id/song_text_tv"
-        android:layout_width="315dp"
-        android:layout_height="290dp"
-        android:layout_margin="5dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="10dp"
         android:scaleType="fitXY"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/song_text_slider"
-        />
+        app:layout_constraintVertical_weight="2" />
 
 
 
