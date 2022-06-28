@@ -5,15 +5,18 @@ import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.musicbox.databinding.ActivityMainBinding
 import com.google.android.material.slider.Slider
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var playButton = findViewById<ImageButton>(R.id.play_button)
-        playButton.setOnClickListener(
+       binding.playButton.setOnClickListener(
             View.OnClickListener {
                 createSongText()
             }
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
      * diese Funktion gibt den Wert des ausgewählten RadioButtons zurück
      **/
     fun getGenreFromRadios(): Int {
-        var genre = findViewById<RadioGroup>(R.id.music_type_radio).checkedRadioButtonId
+        var genre = binding.musicTypeRadio.checkedRadioButtonId
         return genre
     }
 
@@ -32,7 +35,7 @@ class MainActivity : AppCompatActivity() {
      * diese Funktion gibt den Wert des Sliders zurück
      **/
     fun getSongLength(): Float {
-        var songLength = findViewById<Slider>(R.id.song_text_slider).value
+        var songLength = binding.songTextSlider.value
         return songLength
     }
 
